@@ -1,43 +1,18 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {RootNavigation} from './src/navigation/rootNavigation';
+import {store} from './src/store/store';
+import {Provider} from 'react-redux';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-
-      <Text>Hello</Text>
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={{flex: 1}}>
+        <RootNavigation />
+      </SafeAreaView>
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
