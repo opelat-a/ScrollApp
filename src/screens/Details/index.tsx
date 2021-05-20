@@ -1,13 +1,6 @@
-import React, {FC} from 'react';
-import {View, Text} from 'react-native';
-import {useSelector} from 'react-redux';
+import React from 'react';
+import { useProps } from './useProps';
+import { DetailsScreenView } from './view';
 
-export const DetailsScreen: FC = () => {
-  console.log('helloNewComponent');
 
-  return (
-    <View style={{flex: 1, backgroundColor: 'orange'}}>
-      <Text>Details</Text>
-    </View>
-  );
-};
+export const DetailsScreen = () => <DetailsScreenView {...useProps()} />
