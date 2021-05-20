@@ -10,6 +10,7 @@ interface Props<T> {
   asyncFunction: () => Promise<T | void>;
   dispatch: (data: T) => void;
 }
+
 export const useAsyncRedux = <T>({
   asyncFunction,
   dispatch,
@@ -21,8 +22,6 @@ export const useAsyncRedux = <T>({
     try {
       setLoading(true);
       const response: T | void = await asyncFunction();
-      console.log('r', response);
-
       if (response) {
         dispatch(response);
       }

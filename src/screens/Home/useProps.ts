@@ -1,22 +1,19 @@
 import {useEffect} from 'react';
 import {shallowEqual, useDispatch, useSelector} from 'react-redux';
 import {useAsyncRedux} from '../../services/apiRequestHook';
+import {url} from '../../services/url/url';
 import {setDataRedux} from '../../store/reducers/dataReducer/actions';
 import {IData} from '../../store/reducers/dataReducer/types';
 import {getStoreData} from '../../store/selectors/selectors';
 
-const url = 'https://run.mocky.io/v3/3078319a-299e-4a52-920b-d183d2d5fdc5';
-
 interface IPropsHome {
   loading: boolean;
   data: IData;
+  error: Error | null;
 }
-// interface Props {
-//   asyncFunction: <T>() => Promise<T>;
-// }
+
 export const useProps = (): IPropsHome => {
-  console.log('useProps');
-  const getData = async <IData>(): Promise<IData | void> => {
+  const getData = async (): Promise<IData | void> => {
     const response = await fetch(url);
     if (response.ok) {
       return response.json();
@@ -28,7 +25,7 @@ export const useProps = (): IPropsHome => {
   };
   const data = useSelector(getStoreData, shallowEqual);
 
-  const {execute, loading} = useAsyncRedux<IData>({
+  const {execute, loading, error} = useAsyncRedux<IData>({
     asyncFunction: getData,
     dispatch: dispatchToRedux,
   });
@@ -37,5 +34,5 @@ export const useProps = (): IPropsHome => {
     execute();
   }, []);
 
-  return {loading, data};
+  return {loading, data, error};
 };
