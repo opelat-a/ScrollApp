@@ -18,11 +18,11 @@ export const HomeScreenView: FC<IPropsHome> = memo(
         const keyExtractor = useCallback(item => item?.id.toString(), []);
 
         if (error) {
-            return <View style={styles.error} />
+            return <View style={styles.error} />;
         }
 
         if (loading) {
-            return <ActivityIndicator color={'black'} size="large" style={styles.indicator} />
+            return <ActivityIndicator color={'black'} size="large" style={styles.indicator} />;
         }
 
         return (
