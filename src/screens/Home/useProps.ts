@@ -17,6 +17,10 @@ export interface IPropsHome {
 
 export const useProps = (): IPropsHome => {
   const navigation = useNavigation();
+  const dataRedux = useSelector(getStoreData, shallowEqual);
+  const equal = useSelector(getStoreEqualData, shallowEqual);
+  const sortValue = useSelector(getStoreSortData, shallowEqual);
+  const dispatch = useDispatch();
 
   const getData = async (): Promise<IData | void> => {
     const response = await fetch(url);
@@ -24,15 +28,10 @@ export const useProps = (): IPropsHome => {
       return response.json();
     }
   };
-  const dispatch = useDispatch();
 
   const dispatchToRedux = (data: IData): void => {
     dispatch(setDataRedux(data));
   };
-
-  const dataRedux = useSelector(getStoreData, shallowEqual);
-  const equal = useSelector(getStoreEqualData, shallowEqual);
-  const sortValue = useSelector(getStoreSortData, shallowEqual);
 
   const data = useMemo(() => sortHelper(sortValue, equal, dataRedux), [dataRedux, equal, sortValue]);
 

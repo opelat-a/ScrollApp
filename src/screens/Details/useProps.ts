@@ -13,10 +13,9 @@ export interface IPropsDetails {
 export const useProps = (): IPropsDetails => {
     const route = useRoute<RouteProp<ParamList, 'Detail'>>();
     const id = route.params?.id;
-
     const dataRedux = useSelector(getStoreData, shallowEqual);
     const data = useMemo(() => dataRedux.find(item => item.id === id), [id]);
-
     const keys = (Object.keys(data ?? {})) as KeysData;
+
     return { data, keys };
 };

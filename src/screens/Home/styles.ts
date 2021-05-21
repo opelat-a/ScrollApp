@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     view: {
@@ -19,9 +19,9 @@ export const styles = StyleSheet.create({
     },
     error: {
         flex: 1,
-        backgroundColor: 'orange'
+        backgroundColor: 'orange',
     },
     indicator: {
-        flex: 1
-    }
-})
+        flex: 1,
+    },
+});

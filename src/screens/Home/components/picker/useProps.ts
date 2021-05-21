@@ -1,5 +1,3 @@
-
-
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { setEqualDataRedux, setSortDataRedux } from '@reducers/dataReducer/actions';
 import { getStoreEqualData, getStoreSortData } from '@selectors';
@@ -15,7 +13,6 @@ export interface IPropsPicker {
 export const useProps = (): IPropsPicker => {
     const selectedSort = useSelector(getStoreSortData, shallowEqual);
     const equal = useSelector(getStoreEqualData, shallowEqual);
-
     const dispatch = useDispatch();
 
     const onPressHandler = () => {
@@ -25,8 +22,6 @@ export const useProps = (): IPropsPicker => {
     const onSortHandler = (data: keyof CopyData) => {
         dispatch(setSortDataRedux(data));
     };
-
-
 
     return { equal, selectedSort, onPressHandler, onSortHandler };
 };

@@ -9,7 +9,8 @@ export const SortPickerView: FC<IPropsPicker> = ({ onPressHandler, equal, select
     <View style={styles.container}>
         <Text style={styles.filter}>Filter: </Text>
         <View>
-            <TouchableOpacity style={[styles.button, { transform: [{ rotateX: equal ? '0deg' : '180deg' }] }]}
+            <TouchableOpacity
+                style={[styles.button, { transform: [{ rotateX: equal ? '0deg' : '180deg' }] }]}
                 onPress={onPressHandler}
             >
                 <Arrow color={'black'} />
@@ -29,4 +30,4 @@ export const SortPickerView: FC<IPropsPicker> = ({ onPressHandler, equal, select
                 <Picker.Item label="Salary" value="salary" />
             </Picker>
         </View>
-    </View>
+    </View>;

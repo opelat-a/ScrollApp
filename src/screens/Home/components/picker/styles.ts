@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     button: {
         width: 70,
@@ -24,6 +24,6 @@ export const styles = StyleSheet.create({
     filter: {
         color: 'black',
         flex: 1,
-        fontSize: 20
-    }
-})
+        fontSize: 20,
+    },
+});

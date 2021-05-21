@@ -9,9 +9,7 @@ export const HomeScreenView: FC<IPropsHome> = memo(
     ({ data, loading, error, onPressHandler }) => {
 
         const renderItem = useCallback(
-            ({ item }) => (
-                <FlatListItem item={item} onPressHandler={onPressHandler} />
-            ),
+            ({ item }) => ( <FlatListItem item={item} onPressHandler={onPressHandler} />),
             [],
         );
 
