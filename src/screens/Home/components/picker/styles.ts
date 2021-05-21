@@ -15,6 +15,9 @@ export const styles = StyleSheet.create({
     },
     picker: {
         width: '100%',
+        maxHeight: 80,
+        overflow: 'hidden',
+        justifyContent:'center',
     },
     viewPicker: {
         flex: 2,
