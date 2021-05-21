@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react';
+import { useCallback, useState } from 'react';
 
 interface IUseAsync<T> {
   error: null | Error;
@@ -31,5 +31,5 @@ export const useAsyncRedux = <T>({
     setLoading(false);
   }, []);
 
-  return {error, execute, loading};
+  return { error, execute, loading };
 };

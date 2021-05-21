@@ -11,4 +11,4 @@ export const ViewElement: FC<Props> = ({ text, title, first }) =>
     <View style={[styles.view, { flex: first ? 0 : 1 }]}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>{text}</Text>
-    </View>
+    </View>;

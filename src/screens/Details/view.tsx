@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { View } from 'react-native';
 import { Title } from '@reducers/dataReducer/types';
 import { IPropsDetails } from './useProps';
-import { DetailElement } from 'components/detailElement';
+import { DetailElement } from '@components/detailElement';
 import { styles } from './styles';
 
 export const DetailsScreenView: FC<IPropsDetails> = ({ data, keys }) => {

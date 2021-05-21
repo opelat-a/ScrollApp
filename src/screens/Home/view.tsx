@@ -2,7 +2,7 @@ import React, { FC, memo, useCallback } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
 import { IPropsHome } from './useProps';
 import { SortPicker } from './components/picker';
-import { FlatListItem } from 'components/flatListItem';
+import { FlatListItem } from '@components/flatListItem';
 import { styles } from './styles';
 
 export const HomeScreenView: FC<IPropsHome> = memo(

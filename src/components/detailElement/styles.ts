@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     view: {
@@ -7,20 +7,19 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
         minHeight: 50,
-
+        flex:1,
     },
     title: {
         fontSize: 16,
         textAlign: 'right',
         flex: 1,
         paddingHorizontal: 10,
-        color: 'gray'
+        color: 'gray',
     },
     text: {
         textAlign: 'left',
         fontSize: 16,
         flex: 2,
         paddingHorizontal: 10,
-
     },
-})
+});

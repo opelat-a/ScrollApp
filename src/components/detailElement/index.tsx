@@ -8,7 +8,7 @@ type Props = {
     first?: boolean
 }
 export const DetailElement: FC<Props> = ({ text, title }) =>
-    <View style={[styles.view, { flex: 1 }]}>
+    <View style={styles.view}>
         <Text style={styles.title}>{title}:</Text>
         <Text style={styles.text}>{text}</Text>
-    </View>
+    </View>;
