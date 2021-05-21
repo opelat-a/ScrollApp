@@ -8,6 +8,10 @@ Test project with a list of more than 100 items. The project has two screens wit
 Step to run project
 
 ```
+git checkout master
+```
+
+```
 npm i
 ```
 ### Android
